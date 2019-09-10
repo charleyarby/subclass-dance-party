@@ -5,18 +5,15 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
   // use jQuery to create an HTML <span> tag
   // var boundNode = function() {
-  //   this.$node = $('<span class="dancer"></span>');
-  // }.bind(makeDancer);
-  // boundNode();
+  console.log(2);
   this.$node = $('<span class="dancer"></span>');
-  var a = this.step.bind(makeBlinkyDancer);
-  console.log('this is a', a)
+  this.timeBetweenSteps = timeBetweenSteps;
+  console.log(3);
+  this.step();
 
-  this.step.call(makeDancer, timeBetweenSteps, a);
 
+  this.setPosition(top, left);
 
-  this.setPosition(top,left);
-  //return dancer;
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -27,22 +24,15 @@ makeDancer.prototype.setPosition = function(top, left) {
     top: top,
     left: left
   };
-  // console.log('css', this)
+
   this.$node.css(styleSettings);
 };
 
-makeDancer.prototype.step = function(timeBetweenSteps) {
-  var a = this.step.bind(makeBlinkyDancer);
-  console.log('this is a', a)
-  //var newStep = this.step.bind(makeBlinkyDancer);
-  //var newStep = this.step.bind(makeBlinkyDancer);
-  // the basic dancer doesn't do anything interesting at all on each step,
-  // it just schedules the next step
-  // var boundNode = function() {
-  //   this.step;
-  //   console.log('inside bound', this)
-  // }.bind(makeDancer);
-  console.log('from blinkydancer', this);
-  setTimeout(a.step, timeBetweenSteps);
-  //this.step.bind(makeDancer);
+makeDancer.prototype.step = function() {
+
+  //var a = this.step.bind(makeBlinkyDancer)
+  console.log(' set timeout this', this);
+  console.log(' set timeout this.step', this.step);
+  console.log(' set timeout time', this.timeBetweenSteps);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
