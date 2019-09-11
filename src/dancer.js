@@ -9,8 +9,6 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
 
   this.step();
-
-
   this.setPosition(top, left);
 
 };
@@ -28,8 +26,10 @@ makeDancer.prototype.setPosition = function(top, left) {
 };
 
 makeDancer.prototype.step = function() {
-
-
-
   setTimeout(this.step.bind(this), this.timeBetweenSteps, this.left, this.top);
+};
+
+makeDancer.prototype.lineUp = function() {
+
+  this.$node.animate({left: '5%'}, 'slow');
 };

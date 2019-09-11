@@ -1,12 +1,8 @@
 var makeJumpyDancer = function(top, left, timeBetweenSteps) {
 
-
-
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="jumpyDancer"></span>');
+  this.$node = $('<span class="jumpyDancer dancer"></span>');
   this.setPosition(top, left);
-
-
 };
 
 makeJumpyDancer.prototype = Object.create(makeDancer.prototype);
@@ -21,7 +17,7 @@ makeJumpyDancer.prototype.step = function() {
   // other effects you can use on a jQuery-wrapped html tag.
 
 
-  this.$node.animate({top: '-=20%'}, 'slow');
-  this.$node.animate({top: '+=20%'}, 'slow');
+  this.$node.animate({top: '-=20%'}, 'fast');
+  this.$node.animate({top: '+=20%'}, 'fast');
 
 };

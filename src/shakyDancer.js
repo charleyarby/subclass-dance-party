@@ -2,7 +2,7 @@ var makeShakyDancer = function(top, left, timeBetweenSteps) {
 
 
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="shakyDancer"></span>');
+  this.$node = $('<span class="shakyDancer dancer"></span>');
   this.setPosition(top, left);
 };
 
