@@ -25,3 +25,18 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.shakyDancer{
+  color : blue;
+  border:10px solid blue;
+  border-radius:10px;
+  position:absolute;
+}
+
+.jumpyDancer{
+  color : green;
+  border:10px solid green;
+  border-radius:10px;
+  position:absolute;
+
+}

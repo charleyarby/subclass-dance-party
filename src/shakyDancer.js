@@ -1,10 +1,9 @@
 var makeShakyDancer = function(top, left, timeBetweenSteps) {
 
 
-  //this.left = left;
   makeDancer.call(this, top, left, timeBetweenSteps);
-
-
+  this.$node = $('<span class="shakyDancer"></span>');
+  this.setPosition(top, left);
 };
 
 makeShakyDancer.prototype = Object.create(makeDancer.prototype);
@@ -18,9 +17,8 @@ makeShakyDancer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
 
-  console.log(this)
-  this.$node.animate({'this.left': '50px'}, 'fast');
-  this.$node.animate({left: '+=50px'}, 'fast');
-  this.$node.animate({left: '-=50px'}, 'fast');
+
+  this.$node.animate({left: '+=5%'}, 'fast');
+  this.$node.animate({left: '-=5%'}, 'fast');
 
 };
